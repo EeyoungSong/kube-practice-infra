@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-practice-api
+  labels:
+    app: kube-practice-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kube-practice-api
+  template:
+    metadata:
+      labels:
+        app: kube-practice-api
+    spec:
+      containers:
+        - name: kube-practice-api
+          image: eeyoungacr.azurecr.io/kube-practice-api:latest # ✅ Actions가 여기 업데이트
+          ports:
+            - containerPort: 5000
+          env:
+            - name: ENV
+              value: "production"
