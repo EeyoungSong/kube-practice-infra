@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp
+  namespace: argocd
+spec:
+  source:
+    repoURL: "https://github.com/song-eeyoung/infra-repo.git" # Infra Repo 주소
+    path: k8s # YAML 폴더 경로
+    targetRevision: main
+  destination:
+    server: "https://kubernetes.default.svc" # 현재 AKS 클러스터 내부 API 서버
+    namespace: default # 배포될 네임스페이스
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
