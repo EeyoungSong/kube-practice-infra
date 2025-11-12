@@ -10,5 +10,5 @@ spec:
   ports:
     - protocol: TCP
       port: 5000 # ✅ nginx.conf의 proxy_pass 포트
-      targetPort: 5000 # ✅ 컨테이너 내부 포트
+      targetPort: 80 # ✅ 컨테이너 내부 포트
   type: ClusterIP # ✅ 내부 전용 (외부로는 안 나감)
