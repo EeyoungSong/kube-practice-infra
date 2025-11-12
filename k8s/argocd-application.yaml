@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   source:
-    repoURL: "https://github.com/song-eeyoung/infra-repo.git" # Infra Repo 주소
+    repoURL: "https://github.com/song-eeyoung/kube-practice-infra.git" # Infra Repo 주소
     path: k8s # YAML 폴더 경로
     targetRevision: main
   destination:
