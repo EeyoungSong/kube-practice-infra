@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: kube-practice-api
-          image: eeyoungacr.azurecr.io/kube-practice-api:c2d965b8efd4b8d182f15db49481a5d2861e185d
+          image: eeyoungacr.azurecr.io/kube-practice-api:224b66efa9a30aa9edbb2b9685eecb3973c05ac1
           ports:
             - containerPort: 5000
           env:
