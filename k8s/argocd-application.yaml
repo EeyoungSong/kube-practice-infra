@@ -1,16 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp
+  name: kube-practice-app
   namespace: argocd
 spec:
+  project: default # ✅ 필수 항목 추가
   source:
-    repoURL: "https://github.com/song-eeyoung/kube-practice-infra.git" # Infra Repo 주소
-    path: k8s # YAML 폴더 경로
+    repoURL: "https://github.com/EeyoungSong/kube-practice-infra.git" # 👉 Infra Repo 주소
     targetRevision: main
+    path: k8s # 👉 YAML이 있는 폴더 (ex: infra/k8s)
   destination:
-    server: "https://kubernetes.default.svc" # 현재 AKS 클러스터 내부 API 서버
-    namespace: default # 배포될 네임스페이스
+    server: "https://kubernetes.default.svc"
+    namespace: default
   syncPolicy:
     automated:
       prune: true
