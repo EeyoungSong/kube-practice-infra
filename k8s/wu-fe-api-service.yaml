@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wu-fe-api-service
+  namespace: wu-app
+  labels:
+    app: wu-fe-app
+spec:
+  selector:
+    app: wu-fe-app # ✅ Deployment의 labels와 반드시 일치해야 합니다
+  ports:
+    - protocol: TCP
+      port: 3000 # ✅ nginx.conf의 proxy_pass 포트
+      targetPort: 3000 # ✅ 컨테이너 내부 포트
+  type: ClusterIP # ✅ 내부 전용 (외부로는 안 나감)

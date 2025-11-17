@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wu-be-app
+  namespace: wu-app
+  labels:
+    app: wu-be-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wu-be-app
+  template:
+    metadata:
+      labels:
+        app: wu-be-app
+    spec:
+      containers:
+        - name: wu-be-app
+          image: eeyoungacr.azurecr.io/wu-be-app:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: ENV
+              value: "production"

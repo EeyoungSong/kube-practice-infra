@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wu-fe-app
+  namespace: wu-app
+  labels:
+    app: wu-fe-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wu-fe-app
+  template:
+    metadata:
+      labels:
+        app: wu-fe-app
+    spec:
+      containers:
+        - name: wu-fe-app
+          image: eeyoungacr.azurecr.io/wu-fe-app:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: ENV
+              value: "production"
