@@ -24,10 +24,10 @@ data:
             listen 80;
 
             # 정적 페이지
-            location / {
-                root /usr/share/nginx/html;
-                index index.html;
-            }
+            # location / {
+            #     root /usr/share/nginx/html;
+            #     index index.html;
+            # }
 
             # API 서버로 프록시
             location /api/ {
@@ -38,7 +38,7 @@ data:
             }
 
             # wu-fe-app 서버로 프록시
-            location /wu-fe/ {
+            location / {
                 proxy_pass http://wu-fe-api-service.wu-app.svc.cluster.local:3000/;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;

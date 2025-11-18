@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wu-be-api-service
+  name: wu-be-app-service
   namespace: wu-app
   labels:
     app: wu-be-app
