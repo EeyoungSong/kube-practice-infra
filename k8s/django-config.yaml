@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: django-config
+  namespace: wu-app
+data:
+  DEBUG: "1"
+  DJANGO_SETTINGS_MODULE: "config.settings"
+  ENV: "production"
+  ALLOWED_HOSTS: "api.word-universe.win,3.36.114.29,localhost,127.0.0.1"
