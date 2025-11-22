@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: wu-fe-app
-          image: eeyoungacr.azurecr.io/wu-fe-app:874161c3b8a999d401d71e6079a2a552094e9fcd
+          image: eeyoungacr.azurecr.io/wu-fe-app:15725e87d1ce1494900d285e7e8d79fb4999a628
           ports:
             - containerPort: 3000
           env:
