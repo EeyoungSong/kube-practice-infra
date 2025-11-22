@@ -30,7 +30,7 @@ data:
             # }
 
             # API 서버로 프록시
-            location /wu-be {
+            location /wu-be/ {
                 proxy_pass http://wu-be-app-service.wu-app.svc.cluster.local:8000;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
