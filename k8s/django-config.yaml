@@ -7,4 +7,4 @@ data:
   DEBUG: "1"
   DJANGO_SETTINGS_MODULE: "config.settings"
   ENV: "production"
-  ALLOWED_HOSTS: "api.word-universe.win,3.36.114.29,localhost,127.0.0.1"
+  ALLOWED_HOSTS: "api.word-universe.win,4.230.112.41,localhost,127.0.0.1"
