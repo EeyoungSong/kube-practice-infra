@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: wu-be-app
-          image: eeyoungacr.azurecr.io/wu-be-app:bd150c0e9c0672a3f211205cd3f2d26f930020a0
+          image: eeyoungacr.azurecr.io/wu-be-app:d83cca03067eb7efae3566d3afc24d31e8002b77
           ports:
             - containerPort: 8000
           env:
